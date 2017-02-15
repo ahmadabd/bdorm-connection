@@ -46,8 +46,9 @@ def update():             # Update password of accounts base on username.
     db.update(user,passwd)
 
 def help():               # Show program options.
-    print "bdorm.py: "
-    print "Usage: bdorm.py [-a add new account] [-b connect to bdorm] [-c check valid accounts] \n                [-d delete an account] [-u update password of account] "
+    print "index.py: "
+    print "Usage: index.py [-a add new account] [-b connect to bdorm] [-c check valid accounts] \n                [-d delete an account] [-u update password of account] "
+    print "Examples:\nindex.py -c  Print all of stored account."
 
 def main():
     #db.createTable()     # It makes account table for the first time.

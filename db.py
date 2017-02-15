@@ -2,7 +2,7 @@
 
 import sqlite3
 
-db = sqlite3.connect('account.db')  # You cat set there main address like /home/$USER/... .
+db = sqlite3.connect('account.db')  # You cat set there main address like /home/$USER/.../account.db .
 db.row_factory = sqlite3.Row
 
 def createTable():
