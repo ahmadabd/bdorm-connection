@@ -70,6 +70,9 @@ def main():
         elif sys.argv[1] == "--help":
             help()
             exit()
+	else:
+	    help()
+	    exit()
 
     choice = raw_input("(a) For adding new account\n(b) For conneting to net\n(c) And for seeing added account\n(d) For deleting account\n(u) For update password\n(q) Exit\n>>") # Ask what do you want to do?
     if len(choice) > 0:
