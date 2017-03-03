@@ -14,9 +14,11 @@ def add(user,passwd):
     db.commit()
 
 def check():
+    c = 0
     cursor = db.execute('SELECT * FROM account')
     for result in cursor:
-        print result['username'],':',result['password']
+        print "",c,".",result['username'],':',result['password']
+        c += 1
 
 def sendInfoToSite():
     account = []
@@ -26,13 +28,32 @@ def sendInfoToSite():
     return account
 
 def delete():
+    l = []
+    c = 0
     cursor = db.execute('SELECT * FROM account')
     for result in cursor:
-        print result['username']
-    userOfDelete = raw_input("Enter user for delete : ")
-    db.execute('DELETE FROM account WHERE username=?',(userOfDelete,))
+        l.append(result['username'])
+        print c,".",result['username']
+        c += 1
+    userNum = raw_input("Enter num of account for delete : ")
+    if int(userNum) > len(l) - 1:
+        print "your input was out of range."
+        exit()
+    db.execute('DELETE FROM account WHERE username=?',(l[int(userNum)],))
     db.commit()
 
-def update(user,passwd):
-    db.execute('UPDATE account SET password=? WHERE username=?',(passwd,user))
+def update():
+    l = []
+    c = 0
+    cursor = db.execute('SELECT * FROM account')
+    for result in cursor:
+        l.append(result['username'])
+        print c, ".", result['username']
+        c += 1
+    userNum = raw_input("Enter num of user for update : ")
+    if int(userNum) > len(l) - 1:
+        print "your input was out of range."
+        exit()
+    passwd = raw_input("Enter new password : ")
+    db.execute('UPDATE account SET password=? WHERE username=?',(passwd,l[int(userNum)]))
     db.commit()

@@ -40,10 +40,7 @@ def delete():             # Delete accounts base on username.
     db.delete()
 
 def update():             # Update password of accounts base on username.
-    check()
-    user = raw_input("Enter user for update : ")
-    passwd = raw_input("Enter new password : ")
-    db.update(user,passwd)
+    db.update()
 
 def help():               # Show program options.
     print "index.py: "
