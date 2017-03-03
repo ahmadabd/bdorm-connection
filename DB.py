@@ -2,7 +2,7 @@
 
 import sqlite3
 
-db = sqlite3.connect('account.db')  # You cat set there main address like /home/$USER/.../account.db .
+db = sqlite3.connect('account.db')  # set address as /home/$USER/bdorm/account.db . 
 db.row_factory = sqlite3.Row
 
 def createTable():
@@ -14,7 +14,7 @@ def add(user,passwd):
     db.commit()
 
 def check():
-    c = 0
+    c = 1
     cursor = db.execute('SELECT * FROM account')
     for result in cursor:
         print "",c,".",result['username'],':',result['password']

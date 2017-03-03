@@ -13,13 +13,23 @@ First run these commands on terminal :
     pip install BeautifulSoup
     pip install requests
 ```
+###Install:
+```
+    cd bdorm-connection-master
+    ./install.sh
+```
 ###run this program by :
 ```
-    python index.py
+    python bdorm.py
     or
-    ./index.py
+    ./bdorm.py
 ```
-###Options :
+###Adding to linux command:
+add this in the end of ~/.bashrc:
+```
+export PATH=$PATH:/home/ahmad/bdorm/
+```
+####Options :
 valid args:<br>
 '--help' show you all of options.<br>
 '-a' for add new account.<br>

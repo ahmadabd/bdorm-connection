@@ -3,12 +3,12 @@
 import db
 import requests
 import BeautifulSoup
-import time,sys
+import time,sys,os
 
 # bdorm check connection. 
 # auther : Ahmad Abdollahzade (ahmadabd13741112@gmail.com)
 
-def getPasswd():        # Get your user and password and stores them into account.scv .
+def getPasswd():        # Get your user and password and stores them in database.
     user = raw_input("Enter userName : ")
     passwd = raw_input("Enter password : ")
     if len(user) > 0 and len(passwd) > 0:
@@ -48,7 +48,7 @@ def help():               # Show program options.
     print "Examples:\nindex.py -c  Print all of stored account."
 
 def main():
-    #db.createTable()     # It makes account table for the first time.
+    #db.createTable()
     if len(sys.argv) > 1:
         if sys.argv[1] == "-a":
             getPasswd()
